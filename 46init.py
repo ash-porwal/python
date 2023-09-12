@@ -1,4 +1,5 @@
-# __init__ method aka contructor which is first run as the object is created 
+# __init__ method aka contructor in many other programming languges but in Python it is called initializer
+# which is first run as the object is created 
 class Employee:
     company = "Google"
 

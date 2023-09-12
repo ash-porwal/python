@@ -50,3 +50,24 @@ e.takeBreath()
 
 pr = Programmer()
 pr.takeBreath() 
+
+
+# if we have __init__ defined in Parent class then we would want to initialize in Child class too like below
+
+class A:
+    def __init__(self, name:str = "Class A") -> None:
+        self.name = name
+        print("we got name in Class A: ", self.name)
+    
+    def get_name(self):
+        print(f"My name is: {self.name}")
+
+class B(A):
+    def __init__(self, name: str = "Class B") -> None:
+        super().__init__(name)
+    
+    def get_name(self):
+        print(f"This is get name function in class B")
+
+b: B = B("Ash")
+b.get_name()

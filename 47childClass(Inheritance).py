@@ -21,3 +21,17 @@ e.showDetails()
 p = Programmer()
 p.showDetails()
 print(p.company)
+
+
+
+class SomeClassA:
+    age = 26
+
+    def __init__(self) -> None:
+        self.name = 'Ashish'
+
+class SomeClassB(SomeClassA):
+    print("with help of class name: ", SomeClassA.age)
+
+b = SomeClassB()
+print("with help of object: ", b.age)
