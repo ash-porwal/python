@@ -1,5 +1,6 @@
 #using with we do not need to close the file ..it automatically closes 
 
+# and opening file with keyword with this is called context manager
 with open('file.txt', 'r') as z:
     z = z.read()
 print(z)

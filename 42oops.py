@@ -8,3 +8,11 @@ myApplication = RailwayForm() #here we did object instantiation..to yaha  ye bol
 myApplication.name = input("enter your name: ")
 myApplication.train = "Rajdhani Express"
 myApplication.printData()  # here we are calling the function 
+
+'''
+Just a note that method and function are not the same terms
+
+function are not bound to any object and hence are not defined inside class
+While Methods are bound to object and defined inside class
+
+'''
