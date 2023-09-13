@@ -40,3 +40,8 @@ def sum_numbers(a: int, b: int) -> int:
 
 
 print(sum_numbers(5,5))
+
+
+# we can leave any function empty like below
+def random_fun():
+    ...
