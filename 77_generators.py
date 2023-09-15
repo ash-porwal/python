@@ -6,6 +6,12 @@ Iterator - ek aisa python object hota hai jisme __next__() define hota hai
 Iteration - iterate karne ki process ko iteration kehte hai
 
 so now what is generators?
+
+a generator is a special type of iterable, similar to a list or a tuple. 
+But, instead of storing all of its items in memory like a list or tuple, 
+a generator produces items on-the-fly and yields them one by one using the yield keyword.
+Because of this, generators are more memory-efficient for large datasets.
+
 they are a type of iterators...and we can only traverse(travel through an area) them one time just like range() function
 We use generators because we want to save RAM because they creates value on the fly
 '''
@@ -14,8 +20,9 @@ We use generators because we want to save RAM because they creates value on the 
 def gen(n):
     for i in range(n):
         yield i #yield is the generator which generates the value on the fly(when in motion)
+# so as soon as you use yield in function that function is a generator then
 
-one = gen(3)
+one = gen(10**100)
 print(one) #so this is not a function ..this is a generator object ...but if we write return instead of yield in gen() function then it will give some value
 #and in generator we have __next__ method
 print(one.__next__()) #NOW WE ARE GETTING VALUE
@@ -24,7 +31,28 @@ print(one.__next__())
 # print(one.__next__()) #NOW if the value of n is 3 ..i.e it is capable of creating 0,1,2 value just like range...so it gives an error... but in case of for loop we do not see any error because they handle stop iteration
 
 
+# Creating generator using Generator Expression AKA Yield comprehension:
+'''
+Generator expressions provide a concise way to create generator objects.
+They're similar to list comprehensions but use parentheses () instead of square brackets [].
+'''
+# generator expression to produce squares of numbers:
+squares = (x * x for x in range(10))
+
+for square in squares:
+    print(square)
+
+
 #try to create program Making fibonacci series and factorial using generators
+
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
+
+for num in fibonacci(5):
+    print(num)
 
 '''
 From geeksforgeeks
