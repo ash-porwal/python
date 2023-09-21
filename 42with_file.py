@@ -2,11 +2,26 @@
 
 # and opening file with keyword with this is called context manager
 with open('file.txt', 'r') as z:
-    z = z.read()
+    z = z.read() # z.read() will read all the lines in text
+    # we can even specify how many character we want to read - like if I want to read 10 character then we can do like: z.read(10)
+    # if we want to read a single line from file then we have - z.readline()
+    # if we want to read that file lines in a list then we can do - z.readlines()
 print(z)
 with open('file.txt', 'w') as z:
-    z = z.write('ok this is updated file')
+    z = z.write('ok this is updated file1') # whatever is written inside write() will get appended in new file.
+    # just in case if you wanted to text in a new line, then we can do this: z.write("\nThis is new text", 'a)
 print(z)
+
+# Also keep in mind, if we open file with read mode or write mode then it wont allow us to do write method and read method respectively.
+# so if you want to read a file also want to use write mode then we can come up with +, this allows us to use both methods simultaneously.
+
+with open('file.txt', 'a+') as text: # we can use 'w+' or 'r+' to use read and write methods
+    text.write("\nThis is new line")
+    print(text.read())
+
+    # if I want to seek(read or look) a file from starting then I would use 
+    text.seek(0)
+    print(text.read()) #noticed this time we got the output written but above text.read printed empty line
 
 # We can even create our own Context Manager
 
