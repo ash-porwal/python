@@ -10,4 +10,5 @@ So, these both - Asyncio and Threading runs concurrently.
 While in multiprocesssing it runs in Parallel execution - both Processes can be start at exactly at the same time.
 So, in multiprocessing each processes gets its own GIL (Global Interpreter Lock).
 
+# we can lock the processes in multiprocessing with Semaphores too.
 """
