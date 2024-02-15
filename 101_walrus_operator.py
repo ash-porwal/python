@@ -9,11 +9,11 @@
 
 # Without the walrus operator:
 
-data = input("Enter data: ")
-while data:
-    # process data
-    print(f"You entered: {data}")
-    data = input("Enter data: ")
+# data = input("Enter data: ")
+# while data:
+#     # process data
+#     print(f"You entered: {data}")
+#     data = input("Enter data: ")
 
 # With the walrus operator:
 

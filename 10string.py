@@ -24,3 +24,27 @@ c = greet + name
 print(c)
 
 #strings are immutable
+
+# f-string
+key = "key"
+print(f"{key:10} Value") # here we can create 10 spaces, or n number of spaces
+print(f"{key:>10} Value") # here it can create 10 spaces before the key varaible
+print(f"{key:<10} Value") # here it can create 10 spaces after the key varaible
+print(f"{key:^10} Value") # here it can put it in perfectly center
+
+# we can provide any character instead of empty space
+print(f"{key:-^10} Value") # here printing 10 dashes(-)
+print(f"{key:->10} Value")
+print(f"{key:-<10} Value")
+
+# Rounding Floating point number using fstring
+number: float = 10_000.32432534
+print(f"{number:.2f}") # here I've rounded it to two decimal places using 2f -> .<number of decimal place you want>f
+
+# we can convert to percentage
+num: float = 0.096
+print(f"{num:.2%}")
+
+
+big_num = 10_000_000.234234
+print(f"{big_num:,.2%}")
