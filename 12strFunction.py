@@ -21,3 +21,25 @@ print(g.replace("me", "Ashish"))
 print("To check all the methods of the string")
 print()
 print(dir(str))
+
+
+# join
+l = ['some', 'comment']
+print(''.join(l))
+
+# join() is a string method in Python. 
+# It is called on a string (which can be an empty string, as in this case) and takes an iterable (like a list) 
+# as its argument.
+# The method concatenates the items in the provided iterable, using the string it was called on as a separator. 
+
+# In this example, join() is called on an empty string (''). 
+# This means the items of the list l will be concatenated without any separator between them.
+
+# so if you want to concatinate strings and it is big then prefer .join() way instead of '' + ''
+
+#-----------------------------------------------------
+# backslash
+#-----------------------------------------------------
+# Suppose if you want to print something or take something which interpreter will read it as some command of some unique characters
+# then to avoid this situation we can use \ or raw string
+print('\'')

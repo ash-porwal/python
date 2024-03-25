@@ -1,7 +1,5 @@
 """
 We gonna see how to run multiple functions in a pool
-
-
 """
 
 from multiprocessing import Pool
