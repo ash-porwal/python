@@ -19,6 +19,29 @@ print(list(dictionary.keys()))
 
 #we can also print their value - .values()
 print(dictionary.values())
+"""
+I tried to get values, and then converting into list in two ways - 
+
+>>> [dictionary.values()]
+[dict_values(['Hello! I am Ashish Porwal', 'and i am making dictionary', [78, 85, 98], {'c': 'this is another'}, 2])]
+>>> 
+>>> list(dictionary.values())
+['Hello! I am Ashish Porwal', 'and i am making dictionary', [78, 85, 98], {'c': 'this is another'}, 2]
+>>> 
+
+So, the output is different because - 
+
+- Using [dictionary.values()]: 
+    When you wrap dictionary.values() inside square brackets [ ], you're not converting the dictionary values to a list; 
+    instead, you're creating a new list where the only element is the dict_values object produced by dictionary.values(). 
+    So, this creates a list with a single item, and that item is the dict_values object.
+
+- Using list(dictionary.values()): 
+    This explicitly converts the dict_values object to a list. 
+    The list() function takes the dict_values object and creates a new list where each element is a value from the dictionary. 
+    This is why you see each dictionary value as an individual element in the resulting list.
+"""
+
 
 #similarly we can check the values if that value exits in the dic or not using - "in" keyword
 #syntax - "value" in dict_name.values()

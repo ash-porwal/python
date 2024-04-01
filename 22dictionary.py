@@ -26,5 +26,7 @@ print(dictionary['dictionary2']['c'])
 - It is unordered...means inka koi order nahi hota ki ye first hai wo second hai like this
 - It  is mutable....means we can change the value of dictinary
 - It is indexed..means it saves the keyvalue in the index
+   When we say a dictionary in Python is indexed, 
+   it means that we can access its values using unique keys, not through numerical indices as we do with lists or tuples.
 - It cannot contain duplicate keys...means ye jab bhi new value karenge koi index ki to wo purani value se replace kar dega
 '''

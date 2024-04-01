@@ -46,7 +46,14 @@ If we do any modifications to the data, then it will be updated at the memory lo
 Since both the actual and alias name refer to the same location, any modifications done on an existing object will be reflected in the new one also.
 
 '''
+# Like if I take
+x=[10, 20, 30]
+y = x
+x[0] = 90
+print(x)
+print(y)
 
+# above both x and y will get updated as both refers to the same memory location
 '''
 Cloning in List:
 The process of creating duplicate independent objects is called cloning. 
@@ -56,7 +63,8 @@ Therefore, both objects will be independent, and applying any modifications to o
 '''
 
 x=[10, 20, 30]
-y=x[:]
+y=x[:] # when we do y = x[:], we're creating a shallow copy of the list x and assigning it to y
+# A new list object is created as a copy of x and assigned to y. The slice notation [:] creates a new list that includes all elements of x, effectively making a shallow copy.
 print(x)
 print(y)
 print(id(x))

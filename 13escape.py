@@ -19,6 +19,6 @@ print(c)
 a = input("Enter your name: ")
 print("You're are best!", a) #here if you see we put string in double quote and the name variable in just as is it..so that is how we print
 print(a, "You're are best!") 
-# print(a,+ "You're are best!") #here this will slow error
-# print("You're are best!", + a) #here this will slow error
+# print(a,+ "You're are best!") #here this will show error
+# print("You're are best!", + a) #here this will show error
 print(a + "You're are best!") #this will print but we wont see any gap

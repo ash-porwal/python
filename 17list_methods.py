@@ -1,7 +1,7 @@
 #Methods of lsits
 check = [1, 56, 76, 89, 2, 0, -5]
 #.sort- this function will short the list means it will make values in ascending order.
-check.sort()
+check.sort() # this uses Timsort, it is a hybrid of - merge and insertion sort
 print(check)
 
 #.reverse ... this function will reverse the list
