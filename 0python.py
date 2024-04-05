@@ -1,11 +1,14 @@
 """
 Python was released by Guido van Rossum in 1991
 
-- Python is Interpreted Language - Interpreted means that the code is executed line by line and needs to be compiled.
+- Python is Interpreted Language -
+  That means that, unlike languages like C and its variants, Python does not need to be compiled before it is run. Other interpreted languages include PHP and Ruby.
 
 - Python is Dynamically typed Language - means the type of our variables are going to be checked at run time and not at the compiled time.
-    So, in python if we run print(1 + "hello") it is going to give error after running the code, but if it were a Static typed language
-    then it wouldn't even allow to run print(1 + "hello").
+    dynamically typed, this means that you don't need to state the types of variables when you declare them or anything like that. 
+
+- In Python, functions are first-class objects. 
+  This means that they can be assigned to variables, returned from other functions and passed into functions. Classes are also first class objects
 
 - Python is a high level language - When we say "Python is a high-level language," 
     we're referring to the level of abstraction between the language and the computer's hardware. 
@@ -14,7 +17,8 @@ Python was released by Guido van Rossum in 1991
     In Low level language we would be writing code in that syntax which machine would understand. like: 0110000111000
 
 
-- PEP 8 is the style guide for writing Python code. PEP 8 itself is just a document that describes the conventions for writing readable Python code.
+- PEP 8 - stands for Python Enhancement Proposal
+  is the style guide for writing Python code. PEP 8 itself is just a document that describes the conventions for writing readable Python code.
 
 - There are tools that have been created to check your code against the PEP 8 guidelines, 
   and these tools can issue warnings if your code doesn't adhere to the conventions.
@@ -25,5 +29,11 @@ Python was released by Guido van Rossum in 1991
   pip install flake8
   flake8 your_python_file.py
 
+- Difference between scriptig and programming language?
+  Scripting means - to automate the certain tasks, scripting languages don't require compilation steps and they are interpreted.
+  Example: Java code needs to be compiled before running.
+  Where - Python, PHP, JS - needs no compilation
 
+  So, Programming languages are compiled whereas scripting languages are interpreted.
+  But Python can also compile its code into bite code and then interpret it.
 """
