@@ -2,3 +2,10 @@
 a =  5
 if a > 2:
     pass
+
+# ... are another way of writing pass
+if a>2:
+    ...
+
+# or
+if a>2: ...

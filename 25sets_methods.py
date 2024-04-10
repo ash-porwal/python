@@ -14,12 +14,35 @@ print(c)
 
 ''' 
 ******Properties of Sets******
-- Sets are mutable.
+- Sets are mutable but elements of set should be immutale.
 - Sets are unordered # Elements order doesn't matter
 - Sets are unindexed # Cannot access elements by index and cant perform slicing
 - There is no way to change items in sets
 - Sets cannot contain duplicate values
 '''
+
+# When we say a set is mutable, we mean that you can change the contents of the set after it's created. 
+# This includes:
+# - Adding elements to the set.
+# - Removing elements from the set.
+# - Clearing the entire set.
+
+# These operations change the set in place without creating a new set.
+my_set = {1, 2, 3}
+my_set.add(4)  # Adding an element
+my_set.remove(2)  # Removing an element
+print(my_set)  # Output will be {1, 3, 4}
+
+# Immutability of Set Elements
+# On the other hand, the elements that you add to the set must be immutable. 
+# This is because sets rely on the hash values of their elements to check for equality 
+# and determine the uniqueness of elements.
+# For example, you can add a tuple to a set because tuples are immutable:
+my_set.add((5, 6))
+
+# my_set.add([7, 8])  # This will raise a TypeError
+# we can add - integer, string
+
 
 print(len(c)) #it will print length of set..means kitne items hai
 
@@ -38,12 +61,12 @@ print(c)
 #Common Sets operations
 a = {2, 4, 5, 9}
 b = {2, 4, 11, 12}
-print(a.union(b)) #return Values which exist in a or b
+print(a.union(b)) # returns all Values which exist in a and b (and will remove all duplicate values)
 print()
 print(a|b) # another way of Union method ..using pipeline symbol
 
 print()
-print(a.intersection(b)) #return Values which exist in a and b
+print(a.intersection(b)) #return Values which exist in both a and b
 print(a&b) # we can use Ampersand symbol for intersection
 print()
 
