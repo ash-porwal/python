@@ -24,6 +24,7 @@ print(dictionary['dictionary2']['c'])
 '''
 ******Properties of Python Dictionaries******
 - It is unordered...means inka koi order nahi hota ki ye first hai wo second hai like this
+    As of Python version 3.7, dictionaries are ordered
 - It  is mutable....means we can change the value of dictinary
 - It is indexed..means it saves the keyvalue in the index
    When we say a dictionary in Python is indexed, 
