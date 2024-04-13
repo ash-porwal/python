@@ -28,6 +28,7 @@ s = "Hello, world!"
 
 # Using find
 print(s.find("world"))  # Output: 7
+# The find method in Python returns the starting index of the first occurrence of the substring within the string it is called on. If the substring is found, find returns the index of the first character of the first match.
 print(s.find("Python"))  # Output: -1
 
 # Using index
