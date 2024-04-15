@@ -3,6 +3,10 @@
 # for example when we use print() function then we can print any amount of values -> print('a') or print(1,2,3,4) so it takes unlimited amount of arguments
 
 # similarly we can achieve this in our custom function we just have to define * with arguments and if it is a keyword argument then we can define with two **
+
+# *args allows a function to accept any number of positional arguments.
+# **kwargs allows a function to accept any number of keyword arguments.
+
 # *kwargs for dictionary
 def fun1(*x, **y):
     # print(x[2])
