@@ -22,6 +22,7 @@ class MyClass:
 
 # Calling the class method directly on the class, without creating an instance
 MyClass.my_class_method()
+print("Line 25: ", MyClass.class_attribute)
 
 
 '''
