@@ -1,3 +1,4 @@
+# Slicing is used to access parts of sequences like lists, tuples, and strings.
 # String Slicing:
 # A string in Python can be sliced for getting a part of the string. ..like if we want just two character from ashish
 # The index in a string starts from 0 to (length-1) in Python.
