@@ -79,7 +79,82 @@ Python was released by Guido van Rossum in 1991
 -----------------------------------------------
 
 
+-----------------------------------------------
+- How Memory is managed in Python?
+  There is Private heap which stores all object and data strucuture in python,
+  As a developer we don't have access to this private heap and it is taken care by Python Interpreter
+  Python's memory manager allocate heap space.
+  Python has an inbuilt garbage collector which recycles all unused memory and can be made available
+  to heap space.
+-----------------------------------------------
 
+
+-----------------------------------------------
+- Module vs Packages vs Libraries
+  Module - it is a code file which contains collection of functions, classes and variables (example - random module, JSON, OS)
+  Packages - it is a collection of module, and this package dir will also have __init__.py so that we can import modules.
+            and in general we import module from packages 
+  Library - it is a collection of python library(example - requests, Pandas, Numpy)
+-----------------------------------------------
+
+-----------------------------------------------
+- Difference between range & xrange
+  The only difference is that range returns a Python list object 
+  and x range returns an xrange object. It creates the values as you need them with a special technique called yielding.
+-----------------------------------------------
+
+-----------------------------------------------
+- What is pickling and unpickling?
+  Pickling is the process of converting a Python object into a byte stream. 
+  This serialized form of the object can be stored in a file or sent over a network. 
+
+  import pickle
+
+    # Define a sample dictionary
+    data = {'key': 'value', 'hello': 'world'}
+
+    # Serialize the data into a byte stream
+    serialized_data = pickle.dumps(data)
+
+    # Alternatively, write the serialized data to a file
+    with open('data.pkl', 'wb') as file:
+        pickle.dump(data, file)
+
+
+  Unpickling involves converting the byte stream back into a Python object.
+
+  import pickle
+
+  # Assuming we have a file containing pickled data from the previous example
+  with open('data.pkl', 'rb') as file:
+      data = pickle.load(file)
+
+  # Now 'data' is a Python dictionary again
+  print(data)
+-----------------------------------------------
+
+-----------------------------------------------
+- What is GIL?
+  Global Interpreter Lock
+  The GIL ensures that only one thread can execute Python bytecode at a time.
+
+  Although the GIL allows multiple threads to be created in a Python program, 
+  it limits concurrent execution of Python bytecode, 
+  which means Python threads might not effectively utilize multiple CPU cores.
+  So, Instead of using threads, using multiple processes can bypass the GIL.
+
+  Each Python process gets its own Python interpreter and memory space 
+  so the GIL won't be a bottleneck.
+-----------------------------------------------
+
+-----------------------------------------------
+- What is monkey patching in Python?
+  it is a practice of modifying or extending modules, 
+  classes, or methods at runtime, 
+  typically after they have already been imported or defined. 
+  This technique allows for changing the behavior of a piece of code without altering 
+  the original source code directly. 
+-----------------------------------------------
 
 
     
