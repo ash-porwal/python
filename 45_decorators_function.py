@@ -3,9 +3,16 @@ decorators
 are the function which takes another function as an argument and returns a a wrapped version of that function
 decorator takes the result of a function, modifies the result and returns it.
 we use @function_name  to specify a decorator to be applied on another function
+
+A decorator are those functions that allows to add new functionality and behavior 
+to an existing function without modifying its structure. 
+
+This means decorators can:
+    Modify the arguments passed to the function.
+    Execute additional code before or after the function.
+    Modify the result returned by the function.
+    Decide whether to call the function or not, based on conditions implemented within the decorator.
 '''
-
-
 
 def decor(fun):
     def inner():
@@ -25,6 +32,26 @@ def fun1():
 # save_fun()
 
 fun1()
+
+def paisa_double(func):
+    def wrapper(*args, **kwargs):
+        print("Arguments inside wrapper function:\n",*args)
+        original_result = func(*args, **kwargs)
+        return original_result * 2
+    return wrapper
+
+@paisa_double
+def paisa(a, b):
+    return a + b
+
+print(paisa(5, 3))  # Outputs: 16
+
+"""
+When we decorate a function like paisa with @paisa_double, 
+what we're essentially doing is replacing paisa with wrapper. 
+So, when we later call paisa(5, 3), we're actually calling wrapper(5, 3).
+"""
+
 
 # But we dont include wrapper then we will see something unusual.
 # Suppose below is the some function which has a doc string, and function name is some_fun

@@ -13,14 +13,14 @@ class Student:
     def __init__(self, name, grade): 
         self.name = name
         self.grade = grade
+        print("Grade inside class: ", self.grade)
     @property
     def result(self):       
+        print("Grade inside result function: ", self.grade)
         return f"{self.name} got {self.grade}"
 
 Ashish = Student("ashish", "A+")
-Ashish.grade = "c   "
+Ashish.grade = "c"
 print(Ashish.grade)
 print(Ashish.name)
-print(Ashish.result)
-
-
+print(Ashish.result) # result is the function, getting called without parentheses
