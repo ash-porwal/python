@@ -1,17 +1,22 @@
-"""
-function overloading refers to the ability to have multiple functions 
-with the same name but different parameters (different number or types of arguments). 
+# Overloading is - when we define the same function multiple times
+# but each time we define the same function with different parameters
+# this is function overloading and python will call that function accoridng to
+# the arguments passed in that function.
 
-However, Python does not support traditional function overloading.
+# In Python, if you define a function more than once with the same name but different parameters, 
+# the last definition will overwrite the previous ones
 
-Why Python Doesn't Support?
-if you define multiple functions with the same name, the last definition will override the previous ones. 
-"""
+# so we can achieve this functionality similar to function overloading in Python
 
-class first:
-    def fun1(self):
-        print("The first")
-    # def fun1(self,name):
-    #     self.name = name
-a = first()
-a.fun1()
+def greet(*args):
+    if len(args) == 1:
+        print(f"Hello, {args[0]}")
+    elif len(args) == 2:
+        print(f"{args[1]}, {args[0]}")
+    else:
+        print("Incorrect number of arguments")
+
+# Function calls
+greet("Alice")                      # Outputs: Hello, Alice
+greet("Alice", "Good morning")      # Outputs: Good morning, Alice
+greet()                             # Outputs: Incorrect number of arguments

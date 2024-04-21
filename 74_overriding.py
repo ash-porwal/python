@@ -1,15 +1,21 @@
-class A:
-    a_var = "I am class A variable"
-    def __init__(self): #those methods which starts and ends with double underscore are called dunder methods
-        self.var = "Inside class A's constructor"
-        print("auto")
-        self.a_var = "a_var part two inside method"
+class Animal:
+    def speak(self):
+        print("This animal makes a generic sound")
 
-class B(A):
-    b_var = "I am class B variable"
+class Dog(Animal):
+    def speak(self):
+        print("Dog says: Woof woof!")
 
-x = A()
-y = B() #here we made y as object of class B ..and B class is child class of A and we find __init__ method inside A so that is why it will automatically call 
+class Cat(Animal):
+    def speak(self):
+        print("Cat says: Meow")
 
-print(y.b_var)
-print(y.a_var)
+# Creating instances
+generic_animal = Animal()
+dog = Dog()
+cat = Cat()
+
+# Calling the method
+generic_animal.speak()  # Outputs: This animal makes a generic sound
+dog.speak()             # Outputs: Dog says: Woof woof!
+cat.speak()             # Outputs: Cat says: Meow

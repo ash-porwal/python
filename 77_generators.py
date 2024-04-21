@@ -5,6 +5,45 @@ Iterable - iterable ek aisa python object hota hai jisme ya to ye wala __iter__ 
 Iterator - ek aisa python object hota hai jisme __next__() define hota hai
 Iteration - iterate karne ki process ko iteration kehte hai
 
+---------------------------------------------------------------
+------ If someone ask what is iterator and iterable then ------
+---------------------------------------------------------------
+
+Iterable -  iterable is any Python object capable of returning its members one at a time
+            Common examples of iterables include all the sequence types like lists, strings, and tuples, as well as non-sequence types like dictionaries and files.
+
+            You can define an object as an iterable by implementing the __iter__() method in its class definition. The __iter__() method should return an iterator object, which then uses the __next__() method to get the next item.
+
+Iterator -  An iterator is an object that actually performs the iteration
+            It does this by implementing two methods:
+                1. __iter__() 
+                    which should return the iterator object itself. 
+                    This allows iterators to be used where iterables are expected, such as in loops.
+
+                2. __next__() 
+                    which returns the next item of the sequence. 
+                    On reaching the end, and in subsequent calls, 
+                    it should raise StopIteration.
+
+Iteration - 
+            Iteration refers to the process itself of taking an iterable and going through its 
+            elements one by one. 
+'''
+
+my_list = [1, 2, 3]  # This is an iterable
+
+# Obtaining an iterator from the iterable
+my_iterator = iter(my_list)  # The iter() function calls my_list.__iter__()
+
+# Iterating through using the iterator
+try:
+    while True:  # Iteration process
+        item = next(my_iterator)  # The next() function calls my_iterator.__next__()
+        print(item)
+except StopIteration:
+    pass  # End of iteration
+
+'''
 so now what is generators?
 
 a generator is a special type of iterable, similar to a list or a tuple. 
@@ -58,5 +97,5 @@ for num in fibonacci(5):
 From geeksforgeeks
 Return sends a specified value back to its caller 
 whereas Yield can produce a sequence of values. 
-We should use yield when we want to iterate over a sequence, but don't want to store the entire seq`    uence in memory.
+We should use yield when we want to iterate over a sequence, but don't want to store the entire sequence in memory.
 '''
