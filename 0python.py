@@ -156,6 +156,12 @@ Python was released by Guido van Rossum in 1991
   the original source code directly. 
 -----------------------------------------------
 
+-----------------------------------------------
+- Difference between append and extend?
+  append - adds element at the end
+  extend - adds element from an iterable to the end of the list
+-----------------------------------------------
+
 
     
 

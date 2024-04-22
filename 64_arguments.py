@@ -25,3 +25,24 @@ def some_fun(*name: str, age: int) -> None:
     print(name, age)
 
 some_fun("a", "b", age=10) # when we define args then to assign value to age, we have to explicitly define age
+
+print()
+"""
+Arguments are passed by reference,
+means if we change anything within a function, then it will
+reflect in the original value as well
+"""
+def test_f(l:list):
+    l[0]=100 # changing vlaue inside function
+
+l = [1,2,3]
+test_f(l)
+print(l)
+
+# but in this case
+def test_f(l:list):
+    l=[30,45,50] # here it is allocating a new object in the memory
+
+l = [1,2,3]
+test_f(l)
+print(l)
