@@ -16,3 +16,135 @@ function are not bound to any object and hence are not defined inside class
 While Methods are bound to object and defined inside class
 
 '''
+
+# ------------------
+# Concepets of OOPs:
+# ------------------
+
+"""
+1.  Classes and Objects
+    Classes: 
+        A class is a blueprint for creating objects. 
+        It defines a datatype by bundling data (attributes) and functions (methods) 
+        that operate on the data into a single unit. 
+        In Python, classes are defined using the class keyword.
+    Objects: 
+        An object is an instance of a class. 
+        When a class is defined, no memory is allocated until an object of that class is created.
+"""
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        return f"{self.name} says woof!"
+
+# Creating an object of the class Dog
+my_dog = Dog("Buddy", 4)
+print(my_dog.bark())  # Output: Buddy says woof!
+
+"""
+2.  Encapsulation: 
+        This is the bundling of data (variables) and methods that manipulate the data into a 
+        single unit, or class.
+        It restricts direct access to some of an object's components, 
+        which can prevent the accidental modification of data. 
+        In Python, this is done using private (prefixed with _ or __) and protected members.
+"""
+class Car:
+    def __init__(self, speed):
+        self.__max_speed = speed  # Private attribute
+
+    def drive(self):
+        return f"Driving at {self.__max_speed} speed."
+
+my_car = Car(200)
+# print(my_car.__max_speed)  # This will raise an error
+print(my_car.drive())  # Output: Driving at 200 speed.
+
+"""
+3.   Inheritance: 
+        This allows a class to inherit attributes and methods from another class. 
+        The new class is called a derived (or child) class, and the one from which it inherits 
+        is called the base (or parent) class. This helps to reduce code redundancy.
+"""
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        raise NotImplementedError("Derived classes need to implement this method.")
+
+class Dog(Animal):
+    def speak(self):
+        return f"{self.name} says Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return f"{self.name} says Meow!"
+
+dog = Dog("Buddy")
+cat = Cat("Whiskers")
+print(dog.speak())  # Output: Buddy says Woof!
+print(cat.speak())  # Output: Whiskers says Meow!
+
+
+"""
+4.  Polymorphism: 
+        This refers to the way in which different object classes can share the same method name, 
+        but those methods can act differently based on which object calls them. 
+        In Python, this is often achieved by overriding methods in child classes or 
+        by using duck typing.
+"""
+class India:
+    def capital(self):
+        print("New Delhi is the capital of India.")
+
+class USA:
+    def capital(self):
+        print("Washington, D.C. is the capital of the USA.")
+
+def describe_country(country):
+    country.capital()
+
+india = India()
+usa = USA()
+
+describe_country(india)  # Output: New Delhi is the capital of India.
+describe_country(usa)    # Output: Washington, D.C. is the capital of the USA.
+
+
+"""
+5.  Abstraction: 
+        This involves hiding the complex reality while exposing only the necessary parts. 
+        In Python, this is generally accomplished using abstract classes and methods 
+        (from the abc module), which declare methods that must be created within any child classes 
+        built from the abstract class.
+"""
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+    @abstractmethod
+    def perimeter(self):
+        pass
+
+class Rectangle(Shape):
+    def __init__(self, length, breadth):
+        self.length = length
+        self.breadth = breadth
+
+    def area(self):
+        return self.length * self.breadth
+
+    def perimeter(self):
+        return 2 * (self.length + self.breadth)
+
+# shape = Shape()  # This will raise an error, cannot instantiate abstract class
+rect = Rectangle(4, 5)
+print(rect.area())  # Output: 20
+print(rect.perimeter())  # Output: 18

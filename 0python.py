@@ -254,9 +254,37 @@ Python was released by Guido van Rossum in 1991
   extend - adds all elements from an iterable to the end of the list.
 -----------------------------------------------
 
+-----------------------------------------------
+- Built-in data types Properties in Python
+  1. List
+     1. Mutable: Lists can be modified, which means you can add, remove, or change items after the list creation.
+     2. Ordered: Lists maintain the order of elements in which they were inserted.
+     3. Indexable: Each element in a list can be accessed using an index. Python lists are zero-indexed.
+     4. Allows Duplicates: Lists can have multiple identical entries; i.e., they can contain the same value more than once.
+     5. Dynamic Size: Lists can grow or shrink dynamically as items are added or removed.
 
-    
+  2. Tuples
+     1. Immutable: Once a tuple is created, it cannot be modified. No additions, deletions, or changes.
+     2. Ordered: Tuples maintain the order of elements in which they were inserted.
+     3. Indexable: Elements can be accessed via indices, similar to lists.
+     4. Allows Duplicates: Tuples can contain the same value more than once.
+     5. Used for Fixed Data: Ideal for storing collections of items that should not change throughout the program's life.
 
+  3. Dictionary
+     1. Mutable: You can change, add, and remove items after the dictionary has been created.
+     2. Unordered (until Python 3.7), Ordered (Python 3.7 and later): 
+        Earlier versions did not maintain any order, but as of Python 3.7, dictionaries remember the insertion order.
+     3. Key-Value Pairs: Data in dictionaries are stored and fetched by keys, not by index.
+     4. Keys Must Be Unique: Each key must be unique, although values may be duplicated.
+     5. Dynamic Size: Can grow and shrink as needed.
 
-
+  4. Sets
+     1. Mutable: You can add and remove elements from the set.
+     2. Unordered: Sets do not record element position or order of insertion and 
+        therefore cannot be indexed.
+     3. No Duplicates: Sets automatically remove any duplicate entries.
+     4. Sets are not Indexed
+     5. Used for Uniqueness Operations: Excellent for membership testing, 
+        removing duplicates from a sequence, and computing mathematical operations such as intersection, 
+        union, difference, and symmetric difference.
 """
