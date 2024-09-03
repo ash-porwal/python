@@ -1,6 +1,6 @@
 '''
 decorators
-are the function which takes another function as an argument and returns a a wrapped version of that function
+are the function which takes another function as an argument and returns a wrapped version of that function
 decorator takes the result of a function, modifies the result and returns it.
 we use @function_name  to specify a decorator to be applied on another function
 

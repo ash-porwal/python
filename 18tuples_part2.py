@@ -25,7 +25,7 @@ but not change the existing tuple because of its immutability.
 '''
 
 t=(10,20,30,40)
-# t[1]=70 #TypeError output
+# t[1]=70 #TypeError output - this happens because tuples are unordered.
 
 '''
 Concatenation operator (+):

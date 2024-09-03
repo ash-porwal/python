@@ -288,11 +288,26 @@ Python was released by Guido van Rossum in 1991
         removing duplicates from a sequence, and computing mathematical operations such as intersection, 
         union, difference, and symmetric difference.
 -----------------------------------------------
--  what is silicing?
+- what is silicing?
   Slicing in Python is a technique used to access a range of elements 
   from sequences such as lists, tuples, strings, and other iterable objects.
   Slicing allows us to extract a subset of elements from a sequence.
   The syntax for slicing is:
       sequence[start:stop:step]
 -----------------------------------------------
+- What is OOPs?
+  1. OOPs stand for Object-Oriented Programming system 
+  2. It is a programming paradigm(a typical example) that is based on the concept of objects.
+  3. With OOPs we can model real-world entities as objects.
+
+  The four core pillars of OOPs are - 
+  1. Encapsulation - bundling the methods into a single unit called class.
+  2. Abstraction - 
+  3. Inheritance - Allowing a new class to inherit the properties from an existing class.
+                   Which helps in code reusability and establish hierarchical relationship
+                   between classes.
+  4. Polymorphism - This provides ability to different classes to be treated as instance
+                    of the same class through a common interface.
+
+
 """

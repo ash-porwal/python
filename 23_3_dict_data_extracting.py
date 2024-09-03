@@ -11,7 +11,7 @@ a = {
 }
 
 #aim is to fetch the "maa" key value
-#this is a bit noon way
+#this is a bit noob way
 contacts = a.get("contact")
 contacts = contacts[0]
 print(contacts.get("maa"))
