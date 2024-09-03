@@ -1,7 +1,12 @@
-'''Escape sequence character
-To insert characters that are illegal in a string, use an escape character.
-An escape character is a backslash \ followed by the character you want to insert.
+'''
+An escape character in Python is a special character used in a string 
+to denote that the character following it has a different interpretation.
 
+Escape characters are used to insert characters that cannot be directly typed into a string.
+An escape character in Python is a backslash (\) that precedes another character to give it a
+special meaning. It allows you to include characters in a string that are otherwise difficult to
+represent directly, such as newlines (\n), tabs (\t), or quotation marks (\"). When an escape
+character is used, Python interprets the following character in a special way.
 
 \n(use for newline), \t(for making tab(Space)), \'(single quote), \\(backslash)etc
 and what is raw string? - Ans. Raw strings are useful when handling strings that use a lot of backslashes
