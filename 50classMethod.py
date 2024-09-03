@@ -11,7 +11,7 @@ class MyClass:
         self.name = name
 
     @classmethod
-    def my_class_method(cls): # as we it is taking class itself as a  first arguments so we can access class attributes.
+    def my_class_method(cls): # as it is taking class itself as a first arguments so we can access class attributes.
         print("This is a class method!")
         print("Accessing class attribute:", cls.class_attribute)
 
