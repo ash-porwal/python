@@ -132,7 +132,7 @@ Python was released by Guido van Rossum in 1991
 
 - What do you mean by Grabage collector and reference counting?
   Reference counting:
-    Reference counting is memory management technique, in which the object gets dellocated when there is no reference to that in program.
+    Reference counting is memory management technique, where each object in memory keeps a count of the number of references pointing to it. When an object is created, its reference count is initialized to 1 and when the object gets dellocated when there is no reference to that in program.
     there reference are always counted and stored in the memory.
     When reference count of an object reaches 0 then reference counting garbage collection algorithm
     cleans up the object immediately.
