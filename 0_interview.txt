@@ -1,4 +1,3 @@
-"""
 Python was released by Guido van Rossum in 1991
 -----------------------------------------------
 
@@ -97,8 +96,8 @@ Python was released by Guido van Rossum in 1991
 -----------------------------------------------
 - Different types of memory in Python?
   Types of memory - 
-  1. Stack memory - all methods, function calls, references are stored in this.
-  2. Private heap memory - all values and objects are stored
+  1. Stack memory - all Python objects - methods, function calls, references are stored in this.
+  2. Private heap memory - all values are stored
 
   for example
   x = 5
@@ -132,7 +131,7 @@ Python was released by Guido van Rossum in 1991
 
 - What do you mean by Grabage collector and reference counting?
   Reference counting:
-    Reference counting is memory management technique, where each object in memory keeps a count of the number of references pointing to it. When an object is created, its reference count is initialized to 1 and when the object gets dellocated when there is no reference to that in program.
+    Reference counting is memory management technique, in which the object gets dellocated when there is no reference to that in program.
     there reference are always counted and stored in the memory.
     When reference count of an object reaches 0 then reference counting garbage collection algorithm
     cleans up the object immediately.
@@ -287,27 +286,30 @@ Python was released by Guido van Rossum in 1991
      5. Used for Uniqueness Operations: Excellent for membership testing, 
         removing duplicates from a sequence, and computing mathematical operations such as intersection, 
         union, difference, and symmetric difference.
+
 -----------------------------------------------
-- what is silicing?
-  Slicing in Python is a technique used to access a range of elements 
-  from sequences such as lists, tuples, strings, and other iterable objects.
-  Slicing allows us to extract a subset of elements from a sequence.
-  The syntax for slicing is:
-      sequence[start:stop:step]
+- Why does Python uses 0 based indexing?
+    1. Python was influenced by C, which is a 0-based indexed language.
+    2. C adopted 0-based indexing because it maps directly to pointer arithmetic, a core part of its design.
+    3. Index 0 simplifies slicing like - 
+        In Python, slicing a sequence `a` from index `i` to `j` is expressed as a[i:j], 
+        which includes elements from i up to, but not including, j.
+        This half-open interval notation simplifies operations like splitting sequences and avoids off-by-one errors.
+
+        For example, to split a sequence into three parts at indices i and j, you can use:
+          a[:i] for the first part
+          a[i:j] for the middle part
+          a[j:] for the last part
+
+        Example:
+          Let’s take a sequence:
+            a = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+            We’ll split the sequence at indices i = 3 and j = 6.
+
+            1. Slice up to index i (exclusive):
+              a[:i]  # Elements before index 3
+            2. Slice from i to j (inclusive of i, exclusive of j):
+              a[i:j]  # Elements from index 3 to 5
+            3. Slice from j to the end:
+              a[j:]  # Elements from index 6 onward
 -----------------------------------------------
-- What is OOPs?
-  1. OOPs stand for Object-Oriented Programming system 
-  2. It is a programming paradigm(a typical example) that is based on the concept of objects.
-  3. With OOPs we can model real-world entities as objects.
-
-  The four core pillars of OOPs are - 
-  1. Encapsulation - bundling the methods into a single unit called class.
-  2. Abstraction - 
-  3. Inheritance - Allowing a new class to inherit the properties from an existing class.
-                   Which helps in code reusability and establish hierarchical relationship
-                   between classes.
-  4. Polymorphism - This provides ability to different classes to be treated as instance
-                    of the same class through a common interface.
-
-
-"""
