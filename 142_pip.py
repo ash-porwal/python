@@ -133,6 +133,10 @@
 
     The -r (short for requirements) flag tells pip install to install all the packages listed in the specified requirements file
 
+- If we want to installl package without installing any dependencies, then we need to use
+  this flag: --no-deps
+  example: pip install [package_name] --no-deps
+
 - Uninstalling package:
     Notice that when you installed requests, you got pip to install other dependencies too.
     Now, if we want to uninstall the module with the dependencies then this is where the show command in pip comes in handy.

@@ -27,5 +27,30 @@ print(d[1:9:3])
 
 '''
 we read this name[0:4] as - 
-----name sub 0 through 4-----
+----name from index 0 to 3-----
+'''
+
+### NEGATIVE SLICING
+'''
+- In negative indexing allows you to count from the end of the sequence instead of 
+  the beginning.
+
+- When using negative values in slicing, you are defining the start and end points 
+  of the slice relative to the end of the string.
+    - name[-1] retrieves the last character of the string.
+
+    - name[-4:] retrieves the last four characters of the string.
+
+    - name[:-2] captures everything from the start to just before the second-last character
+
+    - name[-3:-1] retrieves the substring starting from the third-last character to 
+                  just before the last character (i.e., the third-last and 
+                  second-last characters).
+
+- We know slicing has 3 things - start, end and step
+  Negative steps are used to reverse the direction of the slice.
+  - name[::-1] reverses the entire string.
+  - name[5:1:-1] starts from index 5 and moves backwards to just after index 1 (thus, index 2).
+
+  - "Ashish"[-1:-4:-1] will start from the last character and move backwards, stopping just before the character at index -4 (which corresponds to m). This slice would give you "hsi".
 '''

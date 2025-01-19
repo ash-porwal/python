@@ -48,3 +48,60 @@ print(f"{num:.2%}")
 
 big_num = 10_000_000.234234
 print(f"{big_num:,.2%}")
+
+n: int = 1
+print(f"{n:2}") # 2 indicates the total width of the output string. 
+                # if nothing specify then the result is padded with space to the left
+
+print(f"{n:02}")  # we specify 0, so result is paddded with 0.
+
+n: str = '1'
+print(f"{n:2}")  # in case if n is str, then it padded it to the end.
+
+
+
+### We can print emojis using their unicode, we can either mention "\U0001F600" or "\N{grinning face}"
+# for all unicode we can refer: https://apps.timwhitlock.info/emoji/tables/unicode
+'''
+>>> "\N{snake}"
+'🐍'
+>>> "\U0001F600"
+'😀'
+>>> "\U0001F44D"
+'👍'
+>>> "\U0001F355"
+'🍕'
+>>> "\U0001F606"
+'😆'
+>>> "\U0001F60B"
+'😋'
+>>> "\U0001F60A"
+'😊'
+>>> "\U0001F618"
+'😘'
+'''
+
+
+### If, we want to know unicode of some character then we can use ord()
+'''
+>>> ord("a")
+97
+
+>>> ord("#")
+35
+'''
+
+# and if we want to know what value is it in that unicode then we can use chr()
+'''
+>>> chr(97)
+'a'
+
+>>> chr(35)
+'#'
+
+>>> chr(8364)
+'€'
+
+>>> chr(8721)
+'∑'
+'''
