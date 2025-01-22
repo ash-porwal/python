@@ -86,3 +86,13 @@ print(dictionary)
 
 # setdefault method - In this if we try to get some value of some key if that exists then it is gonna return and if doesn't exists then we can set the custome value.
 print(dictionary.setdefault('a', 'There is no key name "a"'))
+
+# The dict data type has a class method called .fromkeys() that lets you create new dictionaries from an iterable 
+# of keys and a default value.
+# syntax: .fromkeys(iterable, value=None, /)
+'''
+>>> inventory = dict.fromkeys(["apple", "orange", "banana", "mango"], 0)
+
+>>> inventory
+{'apple': 0, 'orange': 0, 'banana': 0, 'mango': 0}
+'''

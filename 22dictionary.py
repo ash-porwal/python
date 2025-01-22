@@ -29,5 +29,44 @@ print(dictionary['dictionary2']['c'])
 - It is indexed..means it saves the keyvalue in the index
    When we say a dictionary in Python is indexed, 
    it means that we can access its values using unique keys, not through numerical indices as we do with lists or tuples.
-- It cannot contain duplicate keys...means ye jab bhi new value karenge koi index ki to wo purani value se replace kar dega
+- It cannot contain duplicate keys...means ye jab bhi new value karenge koi index ki to wo purani value se replace kar dega.
+- dictionary keys must be hashable - (hashable objects means object must have fixed size, means object must be
+  immutable in nature, so keys in dict could be: string, integer and tuples)
+  (we call those objects hashable whose hash value doesn't get change on changing the content of the object).
+'''
+# We can even use objects like data types and functions as keys:
+'''
+>>> types = {int: 1, float: 2, bool: 3}
+>>> types
+{<class 'int'>: 1, <class 'float'>: 2, <class 'bool'>: 3}
+
+>>> types[float]
+2
+>>> types[bool]
+3
+'''
+
+
+# below is one way of creating dict
+'''
+
+>>> places = [
+...     "Colorado",
+...     "Chicago",
+...     "Boston",
+... ]
+
+>>> teams = [
+...     "Rockies",
+...     "White Sox",
+...     "Red Sox",
+... ]
+
+>>> dict(zip(places, teams))
+{
+    'Colorado': 'Rockies',
+    'Chicago': 'White Sox',
+    'Boston': 'Red Sox',
+}
+
 '''
