@@ -118,7 +118,7 @@ Python was released by Guido van Rossum in 1991
   So, if we get something in Heap memory, so one or more than one object can refer that heap memory.
 
      
-  When, there a value in Private Heap memory and no object refers to that memory, then
+  When, there is a value in Private Heap memory and no object refers to that memory, then
   that value in heap memory is considered as Dead object - and this mechanism is called reference counting. And that dead value will move to grabage collector
 
 - How Memory is managed in Python?
@@ -131,10 +131,9 @@ Python was released by Guido van Rossum in 1991
 
 - What do you mean by Grabage collector and reference counting?
   Reference counting:
-    Reference counting is memory management technique, in which the object gets dellocated when there is no reference to that in program.
-    there reference are always counted and stored in the memory.
-    When reference count of an object reaches 0 then reference counting garbage collection algorithm
-    cleans up the object immediately.
+    Reference counting is a memory management technique where each object keeps track of how many references point to it.
+    When object reference count drops to 0, it is considered as a  dead object and is marked for garbage collection.
+
     for example - x=5 # in this x is pointing to 5, so it has one reference 
     now, if we delocate and point x to a new value then nothing is pointing to 5 thus reference count becomes 0, so now reference counting garbage collection algorithm will get trigger and cleans up the memory.
   
@@ -147,12 +146,35 @@ Python was released by Guido van Rossum in 1991
     - gc.enable()
     - gc.disable()
 
+  Example:
+  -----------------------------
+  >>> import sys
+  >>> 
+  >>> x = 5
+  >>> y = x
+  >>> 
+  >>> print(sys.getrefcount(5))
+  39
+  >>> del y
+  >>> print(sys.getrefcount(5))
+  38
+  >>> del x
+  >>> print(sys.getrefcount(5))
+  37
+  -----------------------------
 
 - What is Duck typing and why python is called dynamically types language?
-  Python don't have problem with if we don't declare the type of the variable.
-  It gets to type of variable in the runtime.
-  Python also takes care of the memory management that's why Python is a dynamically typed language.
 
+  ✅ Python is dynamically typed because:
+  - You do not need to declare a variable's type before using it.
+  - The type is determined at runtime, based on the assigned value.
+  - Python automatically manages memory using reference counting and garbage collection.
+
+  ✅ Duck typing is a concept in dynamically typed languages like Python where the type of an object is determined by its behavior rather than its explicit class/type.
+
+  Refined version:
+  🔹 Python is dynamically typed because you don’t declare variable types, and they are determined at runtime.
+  🔹 Python follows duck typing, meaning it doesn't depend upon the object class.
 -----------------------------------------------
 
 
@@ -189,8 +211,6 @@ Python was released by Guido van Rossum in 1991
   1. xrange of Python2 is now range in Python3
   2. as range returns list object, so it is better than xrange when it comes to operation.
   3. xrange is faster than range
-
-
 -----------------------------------------------
 
 -----------------------------------------------
@@ -210,6 +230,8 @@ Python was released by Guido van Rossum in 1991
     with open('data.pkl', 'wb') as file:
         pickle.dump(data, file)
 
+  This saved file is gonna look like: b'\x80\x04\x95...\x94.'
+  which is not so human readable.
 
   Unpickling involves converting the byte stream back into a Python object.
 
@@ -225,17 +247,13 @@ Python was released by Guido van Rossum in 1991
 
 -----------------------------------------------
 - What is GIL?
-  Global Interpreter Lock
-  The GIL ensures that only one thread can execute Python bytecode at a time.
-  It is like a hurdle as it doesn't allow multi-threading in python.
+  The Global Interpreter Lock (GIL) is a mutex (lock) that allows only one thread to execute Python bytecode at a time, even on multi-core processors.
+  Python has GIL so it can prevent multiple threads from modifying objects simultaneously, ensuring that only one thread executes Python code at a time.
 
-  Although the GIL allows multiple threads to be created in a Python program, 
-  it limits concurrent execution of Python bytecode, 
-  which means Python threads might not effectively utilize multiple CPU cores.
-  So, Instead of using threads, using multiple processes can bypass the GIL.
-
-  Each Python process gets its own Python interpreter and memory space 
-  so the GIL won't be a bottleneck.
+  But we can bypass GIL with 
+    - multiprocessing library: Multiprocessing creates separate processes, each with its own GIL
+    - C extension like numpy: numpy allows parallel exeection when preforming calculation.
+    - asyncio module: for I/O-Bound Tasks (I/O-bound tasks are tasks where the program spends more time waiting for input/output (I/O) operations than doing actual computations.)
 -----------------------------------------------
 
 -----------------------------------------------
