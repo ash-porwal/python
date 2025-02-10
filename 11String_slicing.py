@@ -11,6 +11,9 @@ print(name[0:3]) # ye bol raha hai ki print karo name variables 0 se 2 tak ke in
 #print(name[:4])..here it will take from min to 3
 #print(name[2:])..here it will take from 2 to last index
 
+# Python general syntax for slicing: sequence[start:stop:step]
+
+
 #negative index ...in negative counting last character of string will be -1, then second last will be -2 and so on
 print(name[-4 : -1])
 print(name[-4 : ])
@@ -32,8 +35,36 @@ we read this name[0:4] as -
 
 ### NEGATIVE SLICING
 '''
-- In negative indexing allows you to count from the end of the sequence instead of 
-  the beginning.
+- In general syntax of python -> [start: stop: step]
+  If "step" is negative, the slicing starts from "start" and moves backward towards(to the left) "stop".
+
+  Example:
+    s = [0, 1, 2, 3, 4, 5]
+    print(s[1:4:-1])  # Output: []
+
+  👉 Why does this return an empty list ([])?
+    start = 1 → This refers to s[1] (1).
+    stop = 4 → This refers to s[4] (4).
+    step = -1 → Moves backward.
+
+  💡 Problem:
+      The slicing starts at index 1 (1).
+      But step = -1 expects movement backward.
+      However, stop (4) is ahead of start (1), making it impossible to move backward.
+      👉 Result? Python returns an empty list ([]) because the range makes no sense.
+
+
+
+    So, if we have slicing like this
+      s = [0, 1, 2, 3, 4, 5]
+      print(s[4:1:-1])  # Output: [4, 3, 2]
+
+
+    In, case if we dont provide "start" and "stop" then it reverse it.
+    s = "Python"
+    print(s[::-1])  # Output: "nohtyP"
+
+--------
 
 - When using negative values in slicing, you are defining the start and end points 
   of the slice relative to the end of the string.
@@ -53,4 +84,11 @@ we read this name[0:4] as -
   - name[5:1:-1] starts from index 5 and moves backwards to just after index 1 (thus, index 2).
 
   - "Ashish"[-1:-4:-1] will start from the last character and move backwards, stopping just before the character at index -4 (which corresponds to m). This slice would give you "hsi".
+
+Q: Why does this slicing return an empty list?
+    s = [100, 200, 300, 400, 500]
+    print(s[4:0])
+Answer: this returns empty list because, it starts with index 4 and stops at index 0, 
+        and as "step" is not mentioned, so it takes "+1" as a default value, 
+        so it does not go for backward slicing, so it returns empty list []
 '''
