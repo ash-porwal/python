@@ -215,9 +215,10 @@ Python was released by Guido van Rossum in 1991
 
 -----------------------------------------------
 - What is pickling and unpickling?
-  Pickling is the process of converting a Python object into a byte stream. so that it can be saved in file.
-  This serialized form of the object can be stored in a file or sent over a network. 
+  Pickling is the process of serializing a Python object into a byte stream 
+  so that it can be stored in a file, sent over a network
 
+  ```python
   import pickle
 
     # Define a sample dictionary
@@ -233,8 +234,8 @@ Python was released by Guido van Rossum in 1991
   This saved file is gonna look like: b'\x80\x04\x95...\x94.'
   which is not so human readable.
 
-  Unpickling involves converting the byte stream back into a Python object.
-
+  Unpickling is the reverse process, where the byte stream is deserialized back into a Python   object with its original structure intact.
+  ```python
   import pickle
 
   # Assuming we have a file containing pickled data from the previous example
@@ -258,11 +259,15 @@ Python was released by Guido van Rossum in 1991
 
 -----------------------------------------------
 - What is monkey patching in Python?
-  it is a practice of modifying or extending modules, 
-  classes, or methods at runtime, 
-  typically after they have already been imported or defined. 
-  This technique allows for changing the behavior of a piece of code without altering 
-  the original source code directly. 
+  Monkey patching is a way to modify or extend the behavior of a module, class, 
+  or function at runtime, without altering its original source code.
+
+  monkey patching is often used for:
+  - Fixing bugs in third-party libraries
+  - Modifying behavior in a running program dynamically
+  - Adding extra functionality without modifying the source
+
+
 -----------------------------------------------
 
 -----------------------------------------------
@@ -304,6 +309,18 @@ Python was released by Guido van Rossum in 1991
      5. Used for Uniqueness Operations: Excellent for membership testing, 
         removing duplicates from a sequence, and computing mathematical operations such as intersection, 
         union, difference, and symmetric difference.
+
+-----------------------------------------------
+why is list mutable and tuples are not?
+
+  Lists are mutable because list is dynamic:
+  - It can be modified (elements can be added, removed, or changed).
+  - It is stored in heap memory, and Python allows modification without creating a new list.
+
+  Tuples are Immutable:
+  - Once created, its contents cannot be changed.
+  - Any operation that tries to modify a tuple creates 
+    a new object instead of modifying the existing one.
 
 -----------------------------------------------
 - Why does Python uses 0 based indexing?
