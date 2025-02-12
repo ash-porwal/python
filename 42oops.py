@@ -21,6 +21,9 @@ While Methods are bound to object and defined inside class
 # Concepets of OOPs:
 # ------------------
 
+# The four main pillars of Object-Oriented Programming (OOP) are
+#   Encapsulation, Abstraction, Inheritance, and Polymorphism. 
+
 """
 1.  Classes and Objects
     Classes: 
@@ -46,11 +49,7 @@ print(my_dog.bark())  # Output: Buddy says woof!
 
 """
 2.  Encapsulation: 
-        This is the bundling of data (variables) and methods that manipulate the data into a 
-        single unit, or class.
-        It restricts direct access to some of an object's components, 
-        which can prevent the accidental modification of data. 
-        In Python, this is done using private (prefixed with _ or __) and protected members.
+        It is a process of wrapping data (variables) and methods into a single unit (class) and restricting direct access to some details to protect data integrity.
 """
 class Car:
     def __init__(self, speed):
@@ -92,10 +91,8 @@ print(cat.speak())  # Output: Whiskers says Meow!
 
 """
 4.  Polymorphism: 
-        This refers to the way in which different object classes can share the same method name, 
-        but those methods can act differently based on which object calls them. 
-        In Python, this is often achieved by overriding methods in child classes or 
-        by using duck typing.
+        It enables a single function, method to operate in multiple ways, 
+        allowing flexibility and scalability in programming.
 """
 class India:
     def capital(self):
