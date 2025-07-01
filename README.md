@@ -1,2 +1,2 @@
 # python
-Covered all Python basics
+Covered all Python basics 
