@@ -23,6 +23,5 @@ fruits = ['Apple', 'Oranges', 'Mangoes', 'Pineapple', 'onion']
 for item in fruits.copy():
     if item == "Mangoes":
         fruits.remove("Mangoes")
-
     print(item)
 
