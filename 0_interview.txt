@@ -348,3 +348,50 @@ why is list mutable and tuples are not?
             3. Slice from j to the end:
               a[j:]  # Elements from index 6 onward
 -----------------------------------------------
+- What is OOPs (Object-Oriented Programming)?
+
+  OOPs is a programming approach where we create objects that contain both data and methods,
+  making code more reusable, and easier to maintain.
+
+  🔹 Four Main Principles of OOPs
+    1. Encapsulation:
+        Binding data and methods together
+        Restricts direct access to data
+        Example: Private variables in a class
+    2. Abstraction:
+        Hides implementation details
+        Shows only essential features
+        Example: Using interfaces or abstract classes
+    3. Inheritance
+        One class acquires properties of another
+        Promotes code reusability
+        Example: Child class inheriting from a parent class
+    4. Polymorphism
+        Same method name, different behavior
+        Example: Method overriding or operator overloading
+
+    One liner:
+    OOPs stands for Object-Oriented Programming.
+    It is a programming approach in which we create objects that hold both data and methods,
+    making the code reusable and easy to maintain. 
+    OOPs is based on four main principles: Encapsulation, Inheritance, Polymorphism, and Abstraction.
+    Encapsulation means binding data and methods together into a single unit. 
+    Inheritance is the ability of one class to acquire the properties of another class. 
+    Polymorphism means one interface with multiple forms, where the same method can behave differently. 
+    Abstraction means hiding implementation details and showing only the essential features to the user.
+
+-----------------------------------------------
+- What are Decorators?
+    Decorators are a feature that allow us to modify or extend the behavior of a function 
+    or a method without changing its original code.
+    
+    OR
+    
+    A decorator is a function that takes another function as input, adds some additional functionality to it, 
+    and returns the modified function, without altering the original function.
+    Pyhton has three built in decorators:
+    - Static Method:
+        Static methods can be called from both a class instance as well as from a Class.
+        we do not need to pass the class instance as the first argument via self, unlike other class functions.
+    - Class Method
+    - Property Decorator
