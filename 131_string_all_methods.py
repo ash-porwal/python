@@ -1,5 +1,5 @@
 """
-String all methods – Python 3.11
+String all methods - Python 3.11
 ================================
 
 This module documents commonly used Python string (`str`) methods.

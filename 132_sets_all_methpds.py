@@ -1,5 +1,5 @@
 """
-Sets all methods – Python 3.11
+Sets all methods - Python 3.11
 ==============================
 
 This module documents commonly used Python set (`set`) methods.

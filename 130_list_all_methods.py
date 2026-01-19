@@ -1,5 +1,5 @@
 """
-All list methods – Python 3.11
+All list methods - Python 3.11
 ==============================
 
 This module documents commonly used Python list (`list`) methods.

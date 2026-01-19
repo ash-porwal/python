@@ -1,12 +1,12 @@
 """
-Dict methods – Python 3.11
+Dict methods - Python 3.11
 ==========================
 
 This module documents commonly used Python dictionary (`dict`) methods.
 
 General Notes
 -------------
-• Dictionaries store key–value pairs.
+• Dictionaries store key-value pairs.
 • Keys must be immutable and unique.
 • Dictionaries are mutable.
 • Since Python 3.7, dictionaries preserve insertion order.
