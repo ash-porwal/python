@@ -1,153 +1,258 @@
 """
-String all methods - Python3.11
+String all methods – Python 3.11
+================================
 
-'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 
-'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 
-'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 
-'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 
-'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 
-'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 
-'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill'
+This module documents commonly used Python string (`str`) methods.
+
+General Notes
+-------------
+• All methods are called on a string object.
+• Strings are immutable — methods return new values.
+• Boolean methods return True or False.
+• Methods do NOT modify the original string.
+
+General Syntax
+--------------
+result = string.method(param1, param2, ...)
 """
+
+# ---------------------------------------------------------------------
+# SAMPLE STRINGS
+# ---------------------------------------------------------------------
 
 s = "hello World! 123"
 s2 = "   extra space   "
 
-# capitalize
+# ---------------------------------------------------------------------
+# STRING METHODS
+# ---------------------------------------------------------------------
+
+# capitalize()
+# Syntax: str.capitalize()
+# Params: none
+# Returns: str
 print(s.capitalize())  # Hello world! 123
 
-# casefold
+# casefold()
+# Syntax: str.casefold()
+# Returns: str
 print("HELLO WORLD!".casefold())  # hello world!
 
-# center
+# center()
+# Syntax: str.center(width[, fillchar])
+# Returns: str
 print("hello".center(20, '-'))  # -------hello--------
 
-# count
+# count()
+# Syntax: str.count(sub[, start[, end]])
+# Returns: int
 print(s.count('l'))  # 3
 
-# encode
+# encode()
+# Syntax: str.encode(encoding='utf-8', errors='strict')
+# Returns: bytes
 print(s.encode())  # b'hello World! 123'
 
-# endswith
+# endswith()
+# Syntax: str.endswith(suffix[, start[, end]])
+# Returns: bool
 print(s.endswith('123'))  # True
 
-# expandtabs
+# expandtabs()
+# Syntax: str.expandtabs(tabsize=8)
+# Returns: str
 print("hello\tworld!".expandtabs(4))  # hello   world!
 
-# find
+# find()
+# Syntax: str.find(sub[, start[, end]])
+# Returns: int
 print(s.find('World'))  # 6
 
-# format
+# format()
+# Syntax: str.format(*args, **kwargs)
+# Returns: str
 print("Hello, {}!".format("world"))  # Hello, world!
 
-# format_map
+# format_map()
+# Syntax: str.format_map(mapping)
+# Returns: str
 print("Hello, {name}!".format_map({"name": "world"}))  # Hello, world!
 
-# index
+# index()
+# Syntax: str.index(sub[, start[, end]])
+# Returns: int
 print(s.index('World'))  # 6
 
-# isalnum
-print(s.isalnum())  # False (due to space and exclamation mark)
+# isalnum()
+# Syntax: str.isalnum()
+# Returns: bool
+print(s.isalnum())  # False
 
-# isalpha
+# isalpha()
+# Syntax: str.isalpha()
+# Returns: bool
 print("hello".isalpha())  # True
 
-# isascii
+# isascii()
+# Syntax: str.isascii()
+# Returns: bool
 print(s.isascii())  # True
 
-# isdecimal
+# isdecimal()
+# Syntax: str.isdecimal()
+# Returns: bool
 print("123".isdecimal())  # True
 
-# isdigit
+# isdigit()
+# Syntax: str.isdigit()
+# Returns: bool
 print("123".isdigit())  # True
 
-# isidentifier
+# isidentifier()
+# Syntax: str.isidentifier()
+# Returns: bool
 print("variable1".isidentifier())  # True
 
-# islower
+# islower()
+# Syntax: str.islower()
+# Returns: bool
 print("hello".islower())  # True
 
-# isnumeric
+# isnumeric()
+# Syntax: str.isnumeric()
+# Returns: bool
 print("123".isnumeric())  # True
 
-# isprintable
+# isprintable()
+# Syntax: str.isprintable()
+# Returns: bool
 print(s.isprintable())  # True
 
-# isspace
+# isspace()
+# Syntax: str.isspace()
+# Returns: bool
 print(s2.isspace())  # False
 
-# istitle
+# istitle()
+# Syntax: str.istitle()
+# Returns: bool
 print(s.istitle())  # False
 
-# isupper
+# isupper()
+# Syntax: str.isupper()
+# Returns: bool
 print("HELLO".isupper())  # True
 
-# join
+# join()
+# Syntax: separator.join(iterable)
+# Returns: str
 print(", ".join(["1", "2", "3"]))  # 1, 2, 3
 
-# ljust
+# ljust()
+# Syntax: str.ljust(width[, fillchar])
+# Returns: str
 print("hello".ljust(10, '-'))  # hello-----
 
-# lower
+# lower()
+# Syntax: str.lower()
+# Returns: str
 print("HELLO".lower())  # hello
 
-# lstrip
-print(s2.lstrip())  # "extra space   "
+# lstrip()
+# Syntax: str.lstrip([chars])
+# Returns: str
+print(s2.lstrip())  # extra space   
 
-# maketrans & translate
+# maketrans() & translate()
 trans = str.maketrans('lo', 'ol')
 print("hello world".translate(trans))  # heoll worold
 
-# partition
+# partition()
+# Syntax: str.partition(sep)
+# Returns: tuple
 print("hello world".partition(' '))  # ('hello', ' ', 'world')
 
-# removeprefix (Python 3.9+)
+# removeprefix()
+# Syntax: str.removeprefix(prefix)
+# Returns: str
 print("testcase".removeprefix("test"))  # case
 
-# removesuffix (Python 3.9+)
+# removesuffix()
+# Syntax: str.removesuffix(suffix)
+# Returns: str
 print("testcase".removesuffix("case"))  # test
 
-# replace
+# replace()
+# Syntax: str.replace(old, new[, count])
+# Returns: str
 print("hello world".replace("world", "Python"))  # hello Python
 
-# rfind
+# rfind()
+# Syntax: str.rfind(sub[, start[, end]])
+# Returns: int
 print("hello world world".rfind('world'))  # 12
 
-# rindex
+# rindex()
+# Syntax: str.rindex(sub[, start[, end]])
+# Returns: int
 print("hello world world".rindex('world'))  # 12
 
-# rjust
+# rjust()
+# Syntax: str.rjust(width[, fillchar])
+# Returns: str
 print("hello".rjust(10, '-'))  # -----hello
 
-# rpartition
+# rpartition()
+# Syntax: str.rpartition(sep)
+# Returns: tuple
 print("hello world world".rpartition('world'))  # ('hello world ', 'world', '')
 
-# rsplit
+# rsplit()
+# Syntax: str.rsplit(sep=None, maxsplit=-1)
+# Returns: list[str]
 print("hello world world".rsplit(' '))  # ['hello', 'world', 'world']
 
-# rstrip
-print(s2.rstrip())  # "   extra space"
+# rstrip()
+# Syntax: str.rstrip([chars])
+# Returns: str
+print(s2.rstrip())  #    extra space
 
-# split
+# split()
+# Syntax: str.split(sep=None, maxsplit=-1)
+# Returns: list[str]
 print("hello world".split(' '))  # ['hello', 'world']
 
-# splitlines
+# splitlines()
+# Syntax: str.splitlines(keepends=False)
+# Returns: list[str]
 print("hello\nworld".splitlines())  # ['hello', 'world']
 
-# startswith
+# startswith()
+# Syntax: str.startswith(prefix[, start[, end]])
+# Returns: bool
 print("hello".startswith('he'))  # True
 
-# strip
-print(s2.strip())  # "extra space"
+# strip()
+# Syntax: str.strip([chars])
+# Returns: str
+print(s2.strip())  # extra space
 
-# swapcase
+# swapcase()
+# Syntax: str.swapcase()
+# Returns: str
 print("Hello World".swapcase())  # hELLO wORLD
 
-# title
+# title()
+# Syntax: str.title()
+# Returns: str
 print("hello world".title())  # Hello World
 
-# upper
+# upper()
+# Syntax: str.upper()
+# Returns: str
 print("hello".upper())  # HELLO
 
-# zfill
+# zfill()
+# Syntax: str.zfill(width)
+# Returns: str
 print("42".zfill(5))  # 00042

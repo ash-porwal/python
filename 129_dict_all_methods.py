@@ -1,108 +1,114 @@
 """
-Dict methods - Python3.11
-'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values'
+Dict methods – Python 3.11
+==========================
+
+This module documents commonly used Python dictionary (`dict`) methods.
+
+General Notes
+-------------
+• Dictionaries store key–value pairs.
+• Keys must be immutable and unique.
+• Dictionaries are mutable.
+• Since Python 3.7, dictionaries preserve insertion order.
+• Some methods modify the dictionary in place; others return views or values.
+
+# ---------------------------------------------------------------------
+# ORDER NOTE (Python 3.7+)
+# ---------------------------------------------------------------------
+# Dictionaries preserve insertion order.
+# The "last inserted item" is well-defined for popitem().
+
+General Syntax
+--------------
+result = dict_object.method(param1, param2, ...)
 """
+
+# ---------------------------------------------------------------------
+# SAMPLE DICTIONARY
+# ---------------------------------------------------------------------
+
 dictionary = {1: 'a', 2: 'b', 3: 'c'}
 
-# clear() - Removes all items from the dictionary
+# ---------------------------------------------------------------------
+# DICT METHODS
+# ---------------------------------------------------------------------
+
+# clear()
+# Syntax: dict.clear()
+# Removes all items from the dictionary
+# Returns: None
 dictionary.clear()
-print("After clear:", dictionary)  # After clear: {}
+print("After clear:", dictionary)  # {}
 
-# copy() - Returns a shallow copy of the dictionary
-dictionary = {1: 'a', 2: 'b', 3: 'c'} # creating new dictionary as we cleared above
+# copy()
+# Syntax: dict.copy()
+# Returns: dict (shallow copy)
+dictionary = {1: 'a', 2: 'b', 3: 'c'}
 copy_dict = dictionary.copy()
-print("Copy of dictionary:", copy_dict)  # Copy of dictionary: {1: 'a', 2: 'b', 3: 'c'}
+print("Copy of dictionary:", copy_dict)  # {1: 'a', 2: 'b', 3: 'c'}
 
-# fromkeys() - Creates a new dictionary from the given sequence of keys with a value provided by the user
-new_dict = dict.fromkeys([1, 2, 3], 'value') # we need to provide keys as a list
-print("New dictionary from keys:", new_dict)  # New dictionary from keys: {1: 'value', 2: 'value', 3: 'value'}
+# fromkeys()
+# Syntax: dict.fromkeys(iterable, value=None)
+# iterable: required (keys)
+# value: optional (default = None)
+# Returns: new dict
+new_dict = dict.fromkeys([1, 2, 3], 'value')
+print("New dictionary from keys:", new_dict)  # {1: 'value', 2: 'value', 3: 'value'}
 
-# get() - Returns the value for the specified key if the key is in the dictionary
-# and if key is not present then get will return None
-print("Get value for key 2:", dictionary.get(2))  # Get value for key 2: b
+# get()
+# Syntax: dict.get(key, default=None)
+# Returns: value if key exists, else default
+print("Get value for key 2:", dictionary.get(2))  # b
+print("Get missing key:", dictionary.get(99))  # None
 
-# items() - Returns a view object that displays a list of dictionary's key-value tuple pairs
-print("Dictionary items:", list(dictionary.items()))  # Dictionary items: [(1, 'a'), (2, 'b'), (3, 'c')]
+# items()
+# Syntax: dict.items()
+# Returns: view object of (key, value) tuples
+print("Dictionary items:", list(dictionary.items()))
+# [(1, 'a'), (2, 'b'), (3, 'c')]
 
-# keys() - Returns a view object that displays a list of all the keys in the dictionary
-print("Dictionary keys:", list(dictionary.keys()))  # Dictionary keys: [1, 2, 3]
+# keys()
+# Syntax: dict.keys()
+# Returns: view object of keys
+print("Dictionary keys:", list(dictionary.keys()))  # [1, 2, 3]
 
-# popitem() - Removes the last inserted key-value pair
-# We cannot use popitem() to remove a specific item by key in a dictionary. 
-# The popitem() method is designed to remove and return the last inserted item from the dictionary, 
-# and it does not allow you to specify which item to remove.
+# popitem()
+# Syntax: dict.popitem()
+# Removes and returns the last inserted key-value pair
+# Returns: tuple (key, value)
 dictionary = {1: 'a', 2: 'b', 3: 'c'}
 popped_item = dictionary.popitem()
-print("Popped item:", popped_item)  # Popped item: (3, 'c')
-print("Dictionary after popitem:", dictionary)  # Dictionary after popitem: {1: 'a', 2: 'b'}
-# If you want to remove the first added item instead
-# 
-# popped_item = dictionary.popitem(last=False)
+print("Popped item:", popped_item)  # (3, 'c')
+print("After popitem:", dictionary)  # {1: 'a', 2: 'b'}
 
-# pop() - Removes the element with the specified key
-# we can also remove last index using pop even if we dont know last key
-"""
+# pop()
+# Syntax: dict.pop(key[, default])
+# Removes specified key and returns its value
 dictionary = {1: 'a', 2: 'b', 3: 'c'}
-
-# Identify the last key
-last_key = list(dictionary.keys())[-1] # Since Python 3.7, dictionaries are guaranteed to maintain insertion order. This means that when you iterate over the dictionary keys, items, or values, they will be returned in the order in which they were added to the dictionary. 
-
-# Use pop to remove the last item
-removed_value = dictionary.pop(last_key)
-print(f"Removed ({last_key}: '{removed_value}')")
-print(f"Remaining dictionary: {dictionary}")
-
-"""
 popped_value = dictionary.pop(2)
-print("Popped value:", popped_value)  # Popped value: b
-print("Dictionary after pop:", dictionary)  # Dictionary after pop: {1: 'a', 3: 'c'}
+print("Popped value:", popped_value)  # b
+print("After pop:", dictionary)  # {1: 'a', 3: 'c'}
 
-"""
-However, in versions of Python before 3.6, dictionaries do not maintain any specific order. 
-For Python 3.6 or earlier, we cannot rely on the order of elements in a standard dictionary. 
-For these versions, to maintain order, we would need to use collections.OrderedDict, 
-which explicitly preserves the order in which items are added.
+# pop() with default (avoids KeyError)
+print("Pop missing key:", dictionary.pop(99, "not found"))  # not found
 
+# setdefault()
+# Syntax: dict.setdefault(key, default=None)
+# If key exists: returns its value
+# If key missing: inserts key with default value
+dictionary = {1: 'a', 2: 'b'}
+default_value = dictionary.setdefault(3, 'c')
+print("Set default value:", default_value)  # c
+print("After setdefault:", dictionary)  # {1: 'a', 2: 'b', 3: 'c'}
 
-from collections import OrderedDict
+# update()
+# Syntax: dict.update(other_dict or iterable)
+# Updates dictionary with new key-value pairs
+dictionary.update({4: 'd', 5: 'e'})
+print("After update:", dictionary)  # {1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e'}
 
-# Creating an OrderedDict
-ordered_dict = OrderedDict()
-ordered_dict['one'] = 1
-ordered_dict['two'] = 2
-ordered_dict['three'] = 3
-
-print("Original OrderedDict:")
-for key, value in ordered_dict.items():
-    print(key, value)
-
-# Removing the last item
-ordered_dict.popitem(last=True)  # By default last=True, which removes the last added item
-
-print("\nOrderedDict after removing the last item:")
-for key, value in ordered_dict.items():
-    print(key, value)
-
-# Adding a new item
-ordered_dict['four'] = 4
-
-print("\nOrderedDict after adding a new item:")
-for key, value in ordered_dict.items():
-    print(key, value)
-
-# If you want to remove the first added item instead
-# ordered_dict.popitem(last=False)
-
-"""
-
-# setdefault() - Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
-default_value = dictionary.setdefault(4, 'd')
-print("Set default value:", default_value)  # Set default value: d
-print("Dictionary after setdefault:", dictionary)  # Dictionary after setdefault: {1: 'a', 2: 'b', 4: 'd'}
-
-# update() - Updates the dictionary with the specified key-value pairs
-dictionary.update({5: 'e'})
-print("Dictionary after update:", dictionary)  # Dictionary after update: {1: 'a', 2: 'b', 4: 'd', 5: 'e'}
-
-# values() - Returns a view object that displays a list of all the values in the dictionary
-print("Dictionary values:", list(dictionary.values()))  # Dictionary values: ['a', 'b', 'd', 'e']
+# values()
+# Syntax: dict.values()
+# Returns: view object of values
+print("Dictionary values:", list(dictionary.values()))
+# ['a', 'b', 'c', 'd', 'e']
