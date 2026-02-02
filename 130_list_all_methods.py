@@ -7,7 +7,9 @@ This module documents commonly used Python list (`list`) methods.
 General Notes
 -------------
 • Lists are ordered, mutable collections.
+• Allows duplicate elements
 • Lists can contain mixed data types.
+• Supports indexing, slicing, and list comprehensions
 • Some methods modify the list in place.
 • Some methods return values (e.g., pop, index).
 

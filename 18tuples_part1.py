@@ -1,4 +1,10 @@
 # a datatype which cannot be changed in python is called tuple
+# Tuples are ordered, 
+# Tuples are immutable
+# Tuples allow duplicate values
+# Tuples can have any data types in itself
+# Tuple is hashable only if all its elements are hashable
+
 t = (2, 5, 6, 7)
 print(t)
 print(t[3])

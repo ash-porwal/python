@@ -8,6 +8,7 @@ General Notes
 -------------
 • Dictionaries store key-value pairs.
 • Keys must be immutable and unique.
+• Dictionaries are not index-based; they are key-based.
 • Dictionaries are mutable.
 • Since Python 3.7, dictionaries preserve insertion order.
 • Some methods modify the dictionary in place; others return views or values.

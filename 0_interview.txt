@@ -313,6 +313,10 @@ Python was released by Guido van Rossum in 1991
 -----------------------------------------------
 why is list mutable and tuples are not?
 
+  Lists are mutable to support dynamic operations, 
+  while tuples are immutable to ensure data integrity, better performance, 
+  and safe usage as dictionary keys.
+
   Lists are mutable because list is dynamic:
   - It can be modified (elements can be added, removed, or changed).
   - It is stored in heap memory, and Python allows modification without creating a new list.
@@ -395,3 +399,36 @@ why is list mutable and tuples are not?
         we do not need to pass the class instance as the first argument via self, unlike other class functions.
     - Class Method
     - Property Decorator
+
+-----------------------------------------------
+- Difference between recursion and iteration? When prefer recursion?
+
+    Recursion:
+      A function calls itself
+      Uses the call stack (It means that every time a function is called, Python stores its execution details in memory, and when the function finishes, that memory is released.)
+      Code is often shorter and more readable
+      Higher memory usage due to stack frames
+    
+    Iteration:
+      Uses loops (for, while)
+      Uses constant memory
+      Usually faster and safer in Python
+
+    Iteration is usually more efficient in Python, 
+    but recursion is preferred when the problem is naturally recursive.
+
+- What is stack overflow in recursion?
+
+    Stack overflow occurs when recursive calls exceed the maximum call stack size, 
+    causing the program to crash.
+
+    - Each recursive call consumes stack memory
+    - Missing or incorrect base case leads to infinite recursion
+  
+- Why is recursion slower than iteration in Python?
+
+    Recursion is slower in Python due to function call overhead and 
+    lack of tail-call optimization.
+    - Function calls have overhead
+    - Stack frame creation/destruction is expensive
+    - Python does not optimize tail recursion

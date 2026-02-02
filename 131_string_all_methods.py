@@ -6,10 +6,11 @@ This module documents commonly used Python string (`str`) methods.
 
 General Notes
 -------------
-• All methods are called on a string object.
 • Strings are immutable — methods return new values.
-• Boolean methods return True or False.
+• Any modification creates a new object in memory
 • Methods do NOT modify the original string.
+• Strings are ordered and supports indexing and slicing
+Note: Ordered means each character has a fixed position (index), and we can access characters using indexing
 
 General Syntax
 --------------
